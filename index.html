@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Saher's 3rd Birthday – Peter Rabbit Invites</title>
+  <title>Saher's 3rd Birthday – 5 Peter Rabbit Visual Invites</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Alex+Brush&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #FAF7F2;
-      --card-bg: #FFFFFF;
-      --peter-blue: #5C83A4;
-      --peter-blue-light: #EBF3F8;
-      --peter-blue-dark: #3E5E7A;
-      --sage-green: #7D9D78;
-      --sage-light: #F0F5EF;
-      --carrot: #D97548;
-      --text: #2D3136;
-      --text-muted: #6E757D;
-      --border: #E8DFD5;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --bg: #F7F3ED;
+      --peter-blue: #5B82A6;
+      --peter-dark: #37536D;
+      --sage: #779673;
+      --gold: #C29B38;
+      --terracotta: #D46F4D;
+      --text: #2C3036;
+      --text-muted: #6B7280;
     }
 
     * {
@@ -31,121 +27,108 @@
     }
 
     body {
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Nunito', sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
-      padding-bottom: 110px;
+      padding-bottom: 120px;
     }
 
+    /* Page Header */
     header {
-      background: linear-gradient(180deg, #F3ECE2 0%, var(--bg) 100%);
-      padding: 24px 16px 18px;
+      background: linear-gradient(180deg, #EFE8DC 0%, var(--bg) 100%);
+      padding: 28px 16px 20px;
       text-align: center;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #E2D7C8;
     }
 
-    .badge {
+    .header-badge {
       display: inline-block;
-      background: var(--peter-blue-light);
-      color: var(--peter-blue-dark);
-      padding: 4px 12px;
+      background: #E5EEF5;
+      color: var(--peter-dark);
+      padding: 5px 14px;
       border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
-    h1 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2rem;
-      color: var(--peter-blue-dark);
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      color: var(--peter-dark);
       font-weight: 700;
-      line-height: 1.2;
       margin-bottom: 6px;
     }
 
     header p {
       font-size: 0.95rem;
       color: var(--text-muted);
-      max-width: 500px;
+      max-width: 520px;
       margin: 0 auto;
     }
 
-    .nav-bar {
+    /* Top Sticky Nav */
+    .theme-nav {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(250, 247, 242, 0.95);
-      backdrop-filter: blur(8px);
-      padding: 10px 12px;
+      z-index: 40;
+      background: rgba(247, 243, 237, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 10px 14px;
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid #E2D7C8;
       scrollbar-width: none;
     }
-    .nav-bar::-webkit-scrollbar { display: none; }
+    .theme-nav::-webkit-scrollbar { display: none; }
 
-    .nav-btn {
+    .nav-pill {
       white-space: nowrap;
-      padding: 8px 14px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--card-bg);
+      padding: 8px 15px;
+      border-radius: 999px;
+      border: 1px solid #D5C9B8;
+      background: white;
       font-size: 0.85rem;
       font-weight: 700;
       color: var(--text-muted);
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
       transition: all 0.2s;
     }
 
-    .nav-btn.active {
+    .nav-pill.active {
       background: var(--peter-blue);
       color: white;
       border-color: var(--peter-blue);
-      box-shadow: 0 2px 6px rgba(92, 131, 164, 0.35);
+      box-shadow: 0 3px 8px rgba(91, 130, 166, 0.35);
     }
 
-    .content-container {
-      max-width: 680px;
+    .container {
+      max-width: 620px;
       margin: 0 auto;
-      padding: 16px;
+      padding: 20px 14px;
     }
 
-    .card {
-      background: var(--card-bg);
-      border: 2px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+    /* Invitation Card Container */
+    .invite-section {
+      margin-bottom: 40px;
     }
 
-    .card.is-favorite {
-      border-color: var(--sage-green);
-      box-shadow: 0 10px 30px rgba(125, 157, 120, 0.22);
-    }
-
-    .card-banner {
-      padding: 12px 18px;
-      background: #FAF7F2;
+    .card-top-bar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border);
+      align-items: center;
+      margin-bottom: 12px;
+      padding: 0 4px;
     }
 
-    .card-title {
+    .card-number-badge {
+      font-size: 0.95rem;
       font-weight: 800;
-      font-size: 1rem;
-      color: var(--peter-blue-dark);
+      color: var(--peter-dark);
       display: flex;
       align-items: center;
       gap: 6px;
@@ -153,179 +136,493 @@
 
     .fav-btn {
       background: white;
-      border: 1px solid var(--border);
-      padding: 6px 12px;
+      border: 1.5px solid #D1C5B4;
+      padding: 7px 14px;
       border-radius: 999px;
       font-size: 0.85rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text-muted);
       cursor: pointer;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       transition: all 0.2s;
     }
 
-    .card.is-favorite .fav-btn {
-      background: var(--sage-green);
+    .fav-btn.active {
+      background: var(--sage);
       color: white;
-      border-color: var(--sage-green);
+      border-color: var(--sage);
+      box-shadow: 0 3px 10px rgba(119, 150, 115, 0.4);
     }
 
-    .card-body {
-      padding: 20px;
+    /* ========================================================
+       VISUAL CARD DESIGNS
+       ======================================================== */
+
+    .visual-card {
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      margin-bottom: 14px;
+      position: relative;
     }
 
-    .invite-preview {
-      background: #FDFBF7;
-      border: 1px solid #EFE8DE;
-      border-radius: 14px;
-      padding: 22px 18px;
-      margin-bottom: 18px;
+    /* ----------------------------------------------------
+       THEME 1: VINTAGE STORYBOOK KEEPSAKE
+       ---------------------------------------------------- */
+    .card-theme-1 {
+      background: #FDF9F0;
+      border: 3px double #C4AA7A;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(196, 170, 122, 0.2), 0 0 0 6px #F7F0E1;
+    }
+
+    .card-theme-1 .ornament-top {
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: #9E7B38;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .card-theme-1 .quote {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.15rem;
-      line-height: 1.65;
-    }
-
-    .invite-preview h3 {
-      font-size: 1.65rem;
-      color: var(--peter-blue-dark);
-      font-weight: 700;
-      margin-bottom: 4px;
-      line-height: 1.25;
-    }
-
-    .invite-preview .subtitle {
-      color: var(--carrot);
       font-style: italic;
       font-size: 1.05rem;
+      color: #7D705C;
+      margin-bottom: 14px;
+    }
+
+    .card-theme-1 .art-wrapper {
+      max-width: 250px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    .card-theme-1 .art-wrapper img {
+      width: 100%;
       display: block;
-      margin-bottom: 12px;
     }
 
-    .invite-preview p {
-      margin-bottom: 12px;
-      color: #383B3F;
-    }
-
-    .placeholders-box {
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.9rem;
-      background: white;
-      border-left: 3px solid var(--peter-blue);
-      padding: 12px 14px;
-      border-radius: 0 8px 8px 0;
-      margin-top: 14px;
-    }
-
-    .placeholders-box div {
+    .card-theme-1 .main-title {
+      font-family: 'Alex Brush', cursive;
+      font-size: 2.8rem;
+      color: var(--peter-dark);
+      line-height: 1;
       margin-bottom: 4px;
     }
-    .placeholders-box strong {
-      color: var(--peter-blue-dark);
+
+    .card-theme-1 .sub-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #9E7B38;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .card-theme-1 .invite-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.12rem;
+      line-height: 1.6;
+      color: #4A443B;
+      max-width: 440px;
+      margin: 0 auto 20px;
+    }
+
+    .card-theme-1 .details-frame {
+      border-top: 1px solid #DBC9A8;
+      border-bottom: 1px solid #DBC9A8;
+      padding: 14px 10px;
+      margin: 0 auto;
+      max-width: 460px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      color: #383127;
+      line-height: 1.6;
+    }
+
+    .card-theme-1 .details-frame strong {
+      color: var(--peter-dark);
+      font-weight: 700;
+    }
+
+    /* ----------------------------------------------------
+       THEME 2: "HOP ON OVER" PLAYFUL TODDLER PARTY
+       ---------------------------------------------------- */
+    .card-theme-2 {
+      background: linear-gradient(180deg, #EBF5FB 0%, #FFFFFF 100%);
+      border: 3px solid #BCDDF0;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .card-theme-2 .bunting-badge {
       display: inline-block;
-      width: 75px;
-    }
-
-    .comment-section {
-      background: #FAF8F5;
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-    }
-
-    .comment-section label {
-      display: block;
+      background: #FFE28A;
+      color: #6E5316;
+      font-family: 'Fredoka', sans-serif;
       font-size: 0.85rem;
       font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-theme-2 .art-wrapper {
+      max-width: 270px;
+      margin: 0 auto 14px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(91, 130, 166, 0.12);
+    }
+
+    .card-theme-2 .art-wrapper img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-theme-2 .main-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.2rem;
+      color: var(--peter-dark);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .card-theme-2 .sub-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.3rem;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .card-theme-2 .invite-text {
+      font-size: 0.98rem;
+      color: #4F5E68;
+      max-width: 440px;
+      margin: 0 auto 16px;
+      line-height: 1.55;
+    }
+
+    .card-theme-2 .info-pill-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .card-theme-2 .info-pill {
+      background: white;
+      border: 1.5px solid #D4E6F1;
+      padding: 9px 14px;
+      border-radius: 12px;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-align: left;
+    }
+
+    .card-theme-2 .info-pill .icon {
+      font-size: 1.15rem;
+    }
+
+    /* ----------------------------------------------------
+       THEME 3: MR. MCGREGOR'S GARDEN ADVENTURE
+       ---------------------------------------------------- */
+    .card-theme-3 {
+      background: #F4F7F2;
+      border: 3px solid #8FA88B;
+      padding: 26px 18px;
+      text-align: center;
+    }
+
+    .card-theme-3 .veggie-banner {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5E7A5A;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .card-theme-3 .art-wrapper {
+      max-width: 270px;
+      margin: 0 auto 14px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .card-theme-3 .art-wrapper img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-theme-3 .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #2F472B;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .card-theme-3 .sub-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .card-theme-3 .invite-text {
+      font-size: 0.96rem;
+      color: #42523F;
+      max-width: 440px;
+      margin: 0 auto 16px;
+      line-height: 1.55;
+    }
+
+    .card-theme-3 .garden-box {
+      background: white;
+      border-left: 4px solid var(--terracotta);
+      border-radius: 0 12px 12px 0;
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 0.93rem;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    /* ----------------------------------------------------
+       THEME 4: PETER'S PICNIC & TEA PARTY
+       ---------------------------------------------------- */
+    .card-theme-4 {
+      background: #FDF9F7;
+      border: 3px solid #E4BCB1;
+      padding: 26px 18px;
+      text-align: center;
+    }
+
+    .card-theme-4 .tea-tag {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #A36B5E;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .card-theme-4 .art-wrapper {
+      max-width: 270px;
+      margin: 0 auto 14px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 3px solid white;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .card-theme-4 .art-wrapper img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-theme-4 .main-title {
+      font-family: 'Alex Brush', cursive;
+      font-size: 2.8rem;
+      color: #7D493E;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .card-theme-4 .sub-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #9E6152;
+      margin-bottom: 12px;
+    }
+
+    .card-theme-4 .invite-text {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.12rem;
+      color: #4F3833;
+      max-width: 440px;
+      margin: 0 auto 16px;
+      line-height: 1.6;
+    }
+
+    .card-theme-4 .tea-table-box {
+      background: white;
+      border: 1px dashed #D6A498;
+      border-radius: 14px;
+      padding: 14px;
+      max-width: 460px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+      color: #42302C;
+      line-height: 1.6;
+    }
+
+    /* ----------------------------------------------------
+       THEME 5: 3RD BIRTHDAY BALLOONS & CAKE
+       ---------------------------------------------------- */
+    .card-theme-5 {
+      background: #FFFFFF;
+      border: 3px solid #CDE2EE;
+      border-radius: 24px;
+      padding: 26px 18px;
+      text-align: center;
+      position: relative;
+    }
+
+    .card-theme-5 .badge-3 {
+      display: inline-block;
+      background: #E8F4FA;
+      color: var(--peter-dark);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 5px 16px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .card-theme-5 .art-wrapper {
+      max-width: 270px;
+      margin: 0 auto 14px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(91, 130, 166, 0.12);
+    }
+
+    .card-theme-5 .art-wrapper img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-theme-5 .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      color: var(--peter-dark);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .card-theme-5 .sub-title {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.25rem;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+
+    .card-theme-5 .invite-text {
+      font-size: 0.98rem;
+      color: #52636E;
+      max-width: 440px;
+      margin: 0 auto 16px;
+      line-height: 1.55;
+    }
+
+    .card-theme-5 .modern-badge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      max-width: 460px;
+      margin: 0 auto 10px;
+    }
+
+    .card-theme-5 .badge-item {
+      background: #F4F8FA;
+      border: 1px solid #D6E6F0;
+      padding: 10px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+
+    .card-theme-5 .badge-item.full-width {
+      grid-column: span 2;
+    }
+
+    .card-theme-5 .badge-item strong {
+      display: block;
+      color: var(--peter-dark);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+
+    /* Comment Box under each card */
+    .comment-area {
+      background: white;
+      border: 1px solid #E2D7C8;
+      border-radius: 14px;
+      padding: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .comment-area label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 800;
       color: var(--text-muted);
       margin-bottom: 6px;
     }
 
-    .comment-box {
+    .comment-area textarea {
       width: 100%;
-      min-height: 70px;
-      padding: 10px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.92rem;
-      resize: vertical;
-      outline: none;
-      transition: border-color 0.2s;
-      background: white;
-    }
-
-    .comment-box:focus {
-      border-color: var(--peter-blue);
-    }
-
-    .party-details-card {
-      background: var(--card-bg);
-      border: 2px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .party-details-card h2 {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.6rem;
-      color: var(--peter-blue-dark);
-      margin-bottom: 12px;
-    }
-
-    .form-group {
-      margin-bottom: 12px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .form-input {
-      width: 100%;
+      min-height: 60px;
       padding: 10px 12px;
-      border: 1px solid var(--border);
+      border: 1px solid #D9CEC0;
       border-radius: 8px;
       font-family: 'Nunito', sans-serif;
       font-size: 0.92rem;
       outline: none;
+      resize: vertical;
     }
-    .form-input:focus {
+    .comment-area textarea:focus {
       border-color: var(--peter-blue);
     }
 
-    /* Fixed Bottom Action Bar */
+    /* Bottom Sticky Bar */
     .bottom-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid #E2D7C8;
       padding: 12px 16px;
-      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
       display: flex;
       gap: 10px;
       justify-content: center;
       z-index: 50;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
     }
 
     .btn-action {
       flex: 1;
       max-width: 320px;
-      padding: 12px 16px;
-      border-radius: 12px;
+      padding: 13px 18px;
+      border-radius: 14px;
       font-family: 'Nunito', sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -340,28 +637,27 @@
       background: #25D366;
       color: white;
     }
-
     .btn-whatsapp:active {
-      background: #1EBE5D;
       transform: scale(0.98);
+      background: #1EBE5D;
     }
 
     .btn-copy {
-      background: var(--peter-blue-light);
-      color: var(--peter-blue-dark);
-      border: 1px solid var(--peter-blue);
+      background: #E8F1F7;
+      color: var(--peter-dark);
+      border: 1px solid #BDD4E4;
     }
 
     .toast {
       position: fixed;
       top: 20px;
       left: 50%;
-      transform: translateX(-50%) translateY(-50px);
-      background: var(--peter-blue-dark);
+      transform: translateX(-50%) translateY(-60px);
+      background: var(--peter-dark);
       color: white;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: 30px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 700;
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
       opacity: 0;
@@ -373,19 +669,6 @@
       transform: translateX(-50%) translateY(0);
       opacity: 1;
     }
-
-    .hero-art-container {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .hero-art {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 16px;
-      border: 4px solid white;
-      box-shadow: var(--shadow);
-    }
   </style>
 </head>
 <body>
@@ -393,184 +676,235 @@
   <div class="toast" id="toast">Feedback Copied!</div>
 
   <header>
-    <span class="badge">Saher is Turning 3 🥕</span>
-    <h1>Peter Rabbit Invites</h1>
-    <p>Tap your favourite invite, type any changes or ideas, and send your feedback directly via WhatsApp!</p>
+    <span class="header-badge">Saher's 3rd Birthday 🥕</span>
+    <h1>5 Peter Rabbit Visual Invites</h1>
+    <p>Browse the 5 complete invitation designs below, tap your favourite, add any notes, and tap Send to WhatsApp!</p>
   </header>
 
-  <nav class="nav-bar">
-    <button class="nav-btn active" onclick="scrollToCard('card-1')">1. Storybook</button>
-    <button class="nav-btn" onclick="scrollToCard('card-2')">2. Hop On Over</button>
-    <button class="nav-btn" onclick="scrollToCard('card-3')">3. Garden Adventure</button>
-    <button class="nav-btn" onclick="scrollToCard('card-4')">4. Tea Party</button>
-    <button class="nav-btn" onclick="scrollToCard('card-5')">5. WhatsApp</button>
-    <button class="nav-btn" onclick="scrollToCard('party-details')">📝 Party Details</button>
+  <!-- Sticky Quick Nav -->
+  <nav class="theme-nav">
+    <button class="nav-pill active" onclick="scrollToSection('sec-1')">1. Vintage Storybook</button>
+    <button class="nav-pill" onclick="scrollToSection('sec-2')">2. Hop On Over</button>
+    <button class="nav-pill" onclick="scrollToSection('sec-3')">3. Garden Adventure</button>
+    <button class="nav-pill" onclick="scrollToSection('sec-4')">4. Tea Party & Picnic</button>
+    <button class="nav-pill" onclick="scrollToSection('sec-5')">5. Balloons & Cake</button>
   </nav>
 
-  <div class="content-container">
+  <div class="container">
 
-    <div class="hero-art-container">
-      <img src="peter_rabbit.jpg" alt="Peter Rabbit watercolor art" class="hero-art" onerror="this.style.display='none'">
-    </div>
-
-    <!-- Card 1 -->
-    <div class="card" id="card-1">
-      <div class="card-banner">
-        <span class="card-title">📖 Option 1: Classic Storybook</span>
-        <button class="fav-btn" onclick="selectFavorite(1)">
-          <span class="fav-icon">🤍</span> Pick Favorite
+    <!-- ==============================================
+         CARD 1: VINTAGE STORYBOOK
+         ============================================== -->
+    <div class="invite-section" id="sec-1">
+      <div class="card-top-bar">
+        <span class="card-number-badge">📖 Design 1: Classic Storybook</span>
+        <button class="fav-btn active" id="fav-btn-1" onclick="selectFavorite(1)">
+          <span class="fav-icon">💖</span> My Pick!
         </button>
       </div>
-      <div class="card-body">
-        <div class="invite-preview">
-          <h3>Once Upon a Time...</h3>
-          <span class="subtitle">Saher is Turning Three!</span>
-          <p><em>"Now run along, and don't get into mischief..."</em></p>
-          <p>You are warmly invited to celebrate a very special chapter as <strong>Saher turns 3</strong>! Put on your little blue jacket and join us for an afternoon of storybook adventures, garden treats, and sweet celebrations.</p>
-          <div class="placeholders-box">
-            <div><strong>Date:</strong> <span class="txt-date">[Insert Date]</span></div>
-            <div><strong>Time:</strong> <span class="txt-time">[Insert Time]</span></div>
-            <div><strong>Burrow:</strong> <span class="txt-venue">[Insert Venue Address]</span></div>
-            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact & Date]</span></div>
+
+      <div class="visual-card card-theme-1">
+        <div class="ornament-top">✦ Once Upon a Time ✦</div>
+        <div class="quote">"Now run along, and don't get into mischief..."</div>
+
+        <div class="art-wrapper">
+          <img src="theme1_classic.jpg" alt="Peter Rabbit in Floral Cameo Wreath">
+        </div>
+
+        <div class="main-title">Saher is Turning Three!</div>
+        <div class="sub-title">A Storybook Birthday Celebration</div>
+
+        <p class="invite-text">
+          Put on your little blue jacket and join us for an afternoon of soft play adventures, garden treats, and sweet celebrations in honour of Saher's 3rd Birthday!
+        </p>
+
+        <div class="details-frame">
+          <div><strong>When:</strong> Saturday, 5th December • 3:30 PM – 6:00 PM</div>
+          <div><strong>The Burrow:</strong> Jaego's House, The White Building</div>
+          <div style="font-size: 0.95rem; color: #695D4D;">557 Harrow Road, London W10 4RH</div>
+          <div style="margin-top: 6px; font-style: italic; color: #8C6F34;">
+            RSVP for carrot counting to Shonit by 20th November
           </div>
         </div>
-        <div class="comment-section">
-          <label for="comment-1">💬 Your notes or changes for Option 1:</label>
-          <textarea id="comment-1" class="comment-box" placeholder="e.g. Love the storybook tone! Let's make the time 2pm..."></textarea>
-        </div>
+      </div>
+
+      <div class="comment-area">
+        <label for="comment-1">💬 Notes or tweaks for Design 1 (Classic Storybook):</label>
+        <textarea id="comment-1" placeholder="e.g. Love the vintage wreath! Let's mention grip socks for play..."></textarea>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="card" id="card-2">
-      <div class="card-banner">
-        <span class="card-title">🎈 Option 2: Hop On Over (Playful)</span>
-        <button class="fav-btn" onclick="selectFavorite(2)">
+    <!-- ==============================================
+         CARD 2: HOP ON OVER (PLAYFUL TODDLER)
+         ============================================== -->
+    <div class="invite-section" id="sec-2">
+      <div class="card-top-bar">
+        <span class="card-number-badge">🎈 Design 2: Hop On Over!</span>
+        <button class="fav-btn" id="fav-btn-2" onclick="selectFavorite(2)">
           <span class="fav-icon">🤍</span> Pick Favorite
         </button>
       </div>
-      <div class="card-body">
-        <div class="invite-preview">
-          <h3>Hop On Over!</h3>
-          <span class="subtitle">Saher is Turning 3!</span>
-          <p>Hip, hop, hooray! A little bunny we love is turning three!</p>
-          <p>Join the warren for a hopping good time filled with games, giggles, bouncy toddler fun, and delicious birthday cake.</p>
-          <div class="placeholders-box">
-            <div><strong>When:</strong> <span class="txt-date">[Insert Date]</span> at <span class="txt-time">[Insert Time]</span></div>
-            <div><strong>Where:</strong> <span class="txt-venue">[Insert Venue]</span></div>
-            <div><strong>Note:</strong> Grip socks for soft play / Bunny ears welcome!</div>
-            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact]</span></div>
+
+      <div class="visual-card card-theme-2">
+        <span class="bunting-badge">Soft Play & Toddler Fun</span>
+
+        <div class="art-wrapper">
+          <img src="theme2_hop.jpg" alt="Peter Rabbit Hopping with Bunting">
+        </div>
+
+        <div class="main-title">HOP ON OVER!</div>
+        <div class="sub-title">Saher is Turning 3! 🥕</div>
+
+        <p class="invite-text">
+          Hip, hop, hooray! A little bunny we love is turning three! Join our warren for a hopping good time filled with soft play, giggles, toddler fun, and birthday cake.
+        </p>
+
+        <div class="info-pill-container">
+          <div class="info-pill">
+            <span class="icon">🗓</span>
+            <div><strong>Saturday, 5th December</strong> • 3:30 PM – 6:00 PM</div>
+          </div>
+          <div class="info-pill">
+            <span class="icon">📍</span>
+            <div><strong>Jaego's House</strong> • 557 Harrow Road, London W10 4RH</div>
+          </div>
+          <div class="info-pill" style="background: #FDFBF7; border-color: #F0DFC8;">
+            <span class="icon">🧦</span>
+            <div style="font-size: 0.88rem; color: #8A6432;"><strong>Note:</strong> Grip socks welcome for the soft play area!</div>
           </div>
         </div>
-        <div class="comment-section">
-          <label for="comment-2">💬 Your notes or changes for Option 2:</label>
-          <textarea id="comment-2" class="comment-box" placeholder="e.g. Perfect for toddlers, mention bringing spare clothes..."></textarea>
-        </div>
+      </div>
+
+      <div class="comment-area">
+        <label for="comment-2">💬 Notes or tweaks for Design 2 (Hop On Over):</label>
+        <textarea id="comment-2" placeholder="e.g. Super playful, perfect for toddler soft play!"></textarea>
       </div>
     </div>
 
-    <!-- Card 3 -->
-    <div class="card" id="card-3">
-      <div class="card-banner">
-        <span class="card-title">🥕 Option 3: Garden Adventure</span>
-        <button class="fav-btn" onclick="selectFavorite(3)">
+    <!-- ==============================================
+         CARD 3: MR. MCGREGOR'S GARDEN ADVENTURE
+         ============================================== -->
+    <div class="invite-section" id="sec-3">
+      <div class="card-top-bar">
+        <span class="card-number-badge">🥕 Design 3: Garden Adventure</span>
+        <button class="fav-btn" id="fav-btn-3" onclick="selectFavorite(3)">
           <span class="fav-icon">🤍</span> Pick Favorite
         </button>
       </div>
-      <div class="card-body">
-        <div class="invite-preview">
-          <h3>Mischief in the Garden!</h3>
-          <span class="subtitle">Saher's 3rd Birthday Adventure</span>
-          <p>Sneak past the garden gate and join the mischief!</p>
-          <p>Saher is turning 3, and we are raiding the vegetable patch for sweet treats, garden games, and birthday cake (no scarecrows allowed!).</p>
-          <div class="placeholders-box">
-            <div><strong>When:</strong> <span class="txt-date">[Insert Date]</span> at <span class="txt-time">[Insert Time]</span></div>
-            <div><strong>Gate:</strong> <span class="txt-venue">[Insert Venue Address]</span></div>
-            <div><strong>Dress:</strong> Ready for outdoor fun and games</div>
-            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact]</span></div>
+
+      <div class="visual-card card-theme-3">
+        <div class="veggie-banner">✦ The Vegetable Patch ✦</div>
+
+        <div class="art-wrapper">
+          <img src="theme3_garden.jpg" alt="Peter Rabbit in Mr McGregor's Garden">
+        </div>
+
+        <div class="main-title">MISCHIEF IN THE GARDEN!</div>
+        <div class="sub-title">Saher's 3rd Birthday Celebration 🐰</div>
+
+        <p class="invite-text">
+          Sneak past the garden gate and join the mischief! Saher is turning 3, and we are raiding the vegetable patch for sweet treats, games, and birthday cake!
+        </p>
+
+        <div class="garden-box">
+          <div><strong>Date:</strong> Saturday, 5th December, 3:30 PM – 6:00 PM</div>
+          <div><strong>Garden Gate:</strong> Jaego's House, 557 Harrow Rd, W10 4RH</div>
+          <div style="margin-top: 4px; font-size: 0.88rem; color: #6E5316;">
+            <strong>Rules:</strong> Ready for soft play adventure (no scarecrows allowed!)
           </div>
         </div>
-        <div class="comment-section">
-          <label for="comment-3">💬 Your notes or changes for Option 3:</label>
-          <textarea id="comment-3" class="comment-box" placeholder="e.g. Great if weather is sunny! Add note about parking..."></textarea>
-        </div>
+      </div>
+
+      <div class="comment-area">
+        <label for="comment-3">💬 Notes or tweaks for Design 3 (Garden Adventure):</label>
+        <textarea id="comment-3" placeholder="e.g. Love the garden colors and cabbage patch feel..."></textarea>
       </div>
     </div>
 
-    <!-- Card 4 -->
-    <div class="card" id="card-4">
-      <div class="card-banner">
-        <span class="card-title">🫖 Option 4: Picnic & Afternoon Tea</span>
-        <button class="fav-btn" onclick="selectFavorite(4)">
+    <!-- ==============================================
+         CARD 4: PETER'S TEA PARTY & PICNIC
+         ============================================== -->
+    <div class="invite-section" id="sec-4">
+      <div class="card-top-bar">
+        <span class="card-number-badge">🫖 Design 4: Picnic & Tea Party</span>
+        <button class="fav-btn" id="fav-btn-4" onclick="selectFavorite(4)">
           <span class="fav-icon">🤍</span> Pick Favorite
         </button>
       </div>
-      <div class="card-body">
-        <div class="invite-preview">
-          <h3>Peter's Picnic & Tea Party</h3>
-          <span class="subtitle">In Honour of Saher's 3rd Birthday</span>
-          <p>You are cordially invited to celebrate with us on the lawn!</p>
-          <p>We are laying out picnic rugs for finger sandwiches, berries, chamomile tea, juice, and plenty of birthday cake.</p>
-          <div class="placeholders-box">
-            <div><strong>When:</strong> <span class="txt-date">[Insert Date]</span> at <span class="txt-time">[Insert Time]</span></div>
-            <div><strong>Where:</strong> <span class="txt-venue">[Insert Venue Address]</span></div>
-            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact]</span></div>
+
+      <div class="visual-card card-theme-4">
+        <div class="tea-tag">A Celebration with Friends</div>
+
+        <div class="art-wrapper">
+          <img src="theme4_teaparty.jpg" alt="Peter Rabbit Picnic & Tea Party with Friends">
+        </div>
+
+        <div class="main-title">Saher's Tea Party</div>
+        <div class="sub-title">In Honour of Saher's 3rd Birthday</div>
+
+        <p class="invite-text">
+          You are warmly invited to join Peter and his friends for an afternoon of finger sandwiches, sweet treats, juices, soft play fun, and birthday cake!
+        </p>
+
+        <div class="tea-table-box">
+          <div><strong>When:</strong> Saturday, 5th December • 3:30 PM – 6:00 PM</div>
+          <div><strong>Where:</strong> Jaego's House, The White Building, London W10 4RH</div>
+          <div style="margin-top: 4px; font-style: italic; color: #8A4F44;">
+            Kindly let us know if you can join us by 20th November
           </div>
         </div>
-        <div class="comment-section">
-          <label for="comment-4">💬 Your notes or changes for Option 4:</label>
-          <textarea id="comment-4" class="comment-box" placeholder="e.g. Very sweet aesthetic, mention bringing blankets..."></textarea>
-        </div>
+      </div>
+
+      <div class="comment-area">
+        <label for="comment-4">💬 Notes or tweaks for Design 4 (Tea Party):</label>
+        <textarea id="comment-4" placeholder="e.g. Love all the animal friends at the picnic!"></textarea>
       </div>
     </div>
 
-    <!-- Card 5 -->
-    <div class="card" id="card-5">
-      <div class="card-banner">
-        <span class="card-title">📱 Option 5: WhatsApp Message</span>
-        <button class="fav-btn" onclick="selectFavorite(5)">
+    <!-- ==============================================
+         CARD 5: 3RD BIRTHDAY BALLOONS & CAKE
+         ============================================== -->
+    <div class="invite-section" id="sec-5">
+      <div class="card-top-bar">
+        <span class="card-number-badge">🎂 Design 5: Balloons & Cake</span>
+        <button class="fav-btn" id="fav-btn-5" onclick="selectFavorite(5)">
           <span class="fav-icon">🤍</span> Pick Favorite
         </button>
       </div>
-      <div class="card-body">
-        <div class="invite-preview" style="font-family: 'Nunito', sans-serif; font-size: 0.96rem; background: #F4F7F6;">
-          <p>🐰🥕 <strong>Hop on over! Saher is turning 3!</strong> 🎂🎈</p>
-          <p>We would love for you to join us for a Peter Rabbit themed birthday celebration!</p>
-          <p>
-            🗓 <strong>Date:</strong> <span class="txt-date">[Date]</span><br>
-            ⏰ <strong>Time:</strong> <span class="txt-time">[Time]</span><br>
-            📍 <strong>Where:</strong> <span class="txt-venue">[Venue Name & Address]</span><br>
-            🥕 <strong>What to expect:</strong> Toddler games, garden treats & birthday cake!
-          </p>
-          <p>Please let us know if you can make it by <span class="txt-rsvp">[RSVP Date]</span> via WhatsApp on <span class="txt-rsvp-phone">[Phone]</span>.<br>Can't wait to celebrate together! 🐰✨</p>
-        </div>
-        <div class="comment-section">
-          <label for="comment-5">💬 Your notes or changes for Option 5:</label>
-          <textarea id="comment-5" class="comment-box" placeholder="e.g. Short and sweet, let's include the Google Maps pin..."></textarea>
-        </div>
-      </div>
-    </div>
 
-    <!-- Party Details -->
-    <div class="party-details-card" id="party-details">
-      <h2>📝 Party Details & Dates</h2>
-      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">Fill these in once and they will update all invites above automatically.</p>
-      
-      <div class="form-group">
-        <label>Party Date</label>
-        <input type="text" id="input-date" class="form-input" value="Saturday, 5th December" placeholder="e.g. Saturday, 5th December" oninput="updateDetails()">
+      <div class="visual-card card-theme-5">
+        <span class="badge-3">Turning 3 Milestone 🎈</span>
+
+        <div class="art-wrapper">
+          <img src="theme5_birthday.jpg" alt="Peter Rabbit with Balloons and 3rd Birthday Cake">
+        </div>
+
+        <div class="main-title">Saher is Turning 3!</div>
+        <div class="sub-title">Peter Rabbit Birthday Celebration</div>
+
+        <p class="invite-text">
+          Come celebrate our little bunny turning THREE! We will have soft play fun, delicious party treats, balloons, and plenty of birthday cake!
+        </p>
+
+        <div class="modern-badge-grid">
+          <div class="badge-item">
+            <strong>Date</strong>
+            Saturday 5th Dec
+          </div>
+          <div class="badge-item">
+            <strong>Time</strong>
+            3:30 PM – 6:00 PM
+          </div>
+          <div class="badge-item full-width">
+            <strong>Location</strong>
+            Jaego's House, 557 Harrow Road, London W10 4RH
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Party Time</label>
-        <input type="text" id="input-time" class="form-input" value="3:30 PM – 6:00 PM" placeholder="e.g. 3:30 PM – 6:00 PM" oninput="updateDetails()">
-      </div>
-      <div class="form-group">
-        <label>Venue / Address</label>
-        <input type="text" id="input-venue" class="form-input" value="Jaego's House, The White Building, 557 Harrow Road, London W10 4RH" placeholder="e.g. Jaego's House, 557 Harrow Road, W10 4RH" oninput="updateDetails()">
-      </div>
-      <div class="form-group">
-        <label>RSVP Deadline & Contact</label>
-        <input type="text" id="input-rsvp" class="form-input" placeholder="e.g. RSVP by 5th Oct to Shonit (07123456789)" oninput="updateDetails()">
+
+      <div class="comment-area">
+        <label for="comment-5">💬 Notes or tweaks for Design 5 (Balloons & Cake):</label>
+        <textarea id="comment-5" placeholder="e.g. The 3 on the cake is adorable!"></textarea>
       </div>
     </div>
 
@@ -579,7 +913,7 @@
   <!-- Bottom Floating Action Bar -->
   <div class="bottom-bar">
     <button class="btn-action btn-whatsapp" onclick="sendWhatsApp()">
-      💬 Send to WhatsApp
+      💬 Send Choices to WhatsApp
     </button>
     <button class="btn-action btn-copy" onclick="copyFeedback()">
       📋 Copy Notes
@@ -589,24 +923,22 @@
   <script>
     let currentFavorite = 1;
     const titles = {
-      1: "Option 1: Classic Storybook",
-      2: "Option 2: Hop On Over (Playful)",
-      3: "Option 3: Garden Adventure",
-      4: "Option 4: Picnic & Tea Party",
-      5: "Option 5: WhatsApp Message"
+      1: "Design 1: Classic Storybook (Floral Cameo Wreath)",
+      2: "Design 2: Hop On Over (Playful Bunting & Leaping Peter)",
+      3: "Design 3: Garden Adventure (Mr. McGregor's Veggie Patch)",
+      4: "Design 4: Picnic & Tea Party (Peter & Friends Picnic)",
+      5: "Design 5: Balloons & Cake (Carrot Cake & Balloons)"
     };
 
     function selectFavorite(index) {
       currentFavorite = index;
       for (let i = 1; i <= 5; i++) {
-        const card = document.getElementById(`card-${i}`);
-        const btn = card.querySelector('.fav-btn');
-        const icon = card.querySelector('.fav-icon');
+        const btn = document.getElementById(`fav-btn-${i}`);
         if (i === index) {
-          card.classList.add('is-favorite');
+          btn.classList.add('active');
           btn.innerHTML = `<span class="fav-icon">💖</span> My Pick!`;
         } else {
-          card.classList.remove('is-favorite');
+          btn.classList.remove('active');
           btn.innerHTML = `<span class="fav-icon">🤍</span> Pick Favorite`;
         }
       }
@@ -614,53 +946,35 @@
       showToast(`Selected ${titles[index]}!`);
     }
 
-    function scrollToCard(id) {
+    function scrollToSection(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.nav-pill').forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
     }
 
-    function updateDetails() {
-      const date = document.getElementById('input-date').value || '[Insert Date]';
-      const time = document.getElementById('input-time').value || '[Insert Time]';
-      const venue = document.getElementById('input-venue').value || '[Insert Venue Address]';
-      const rsvp = document.getElementById('input-rsvp').value || '[RSVP Contact & Date]';
-
-      document.querySelectorAll('.txt-date').forEach(el => el.textContent = date);
-      document.querySelectorAll('.txt-time').forEach(el => el.textContent = time);
-      document.querySelectorAll('.txt-venue').forEach(el => el.textContent = venue);
-      document.querySelectorAll('.txt-rsvp').forEach(el => el.textContent = rsvp);
-
-      saveData();
-    }
-
     function generateSummary() {
-      const date = document.getElementById('input-date').value || '(Not set yet)';
-      const time = document.getElementById('input-time').value || '(Not set yet)';
-      const venue = document.getElementById('input-venue').value || '(Not set yet)';
-      const rsvp = document.getElementById('input-rsvp').value || '(Not set yet)';
-      
-      let summary = `🐰 *Saher's 3rd Birthday – Peter Rabbit Party Plan* 🎂\n\n`;
-      summary += `⭐ *Favourite Pick:* ${titles[currentFavorite]}\n\n`;
+      let summary = `🐰 *Saher's 3rd Birthday – Peter Rabbit Invitation Feedback* 🎂\n\n`;
+      summary += `⭐ *Favourite Design Pick:* ${titles[currentFavorite]}\n\n`;
 
       let hasNotes = false;
-      let notesText = `📝 *Comments & Tweaks:*\n`;
+      let notesText = `📝 *My Comments & Tweaks:*\n`;
       for (let i = 1; i <= 5; i++) {
         const comment = document.getElementById(`comment-${i}`).value.trim();
         if (comment) {
           hasNotes = true;
-          notesText += `• *${titles[i]}:* ${comment}\n`;
+          notesText += `• *Design ${i}:* ${comment}\n`;
         }
       }
       if (hasNotes) {
         summary += notesText + `\n`;
+      } else {
+        summary += `(No specific tweaks requested — ready to use this design!)\n\n`;
       }
 
       summary += `📍 *Party Details:*\n`;
-      summary += `• Date: ${date}\n`;
-      summary += `• Time: ${time}\n`;
-      summary += `• Venue: ${venue}\n`;
-      summary += `• RSVP: ${rsvp}\n`;
+      summary += `• Date: Saturday, 5th December\n`;
+      summary += `• Time: 3:30 PM – 6:00 PM\n`;
+      summary += `• Venue: Jaego's House, 557 Harrow Road, London W10 4RH\n`;
 
       return summary;
     }
@@ -693,19 +1007,13 @@
           3: document.getElementById('comment-3').value,
           4: document.getElementById('comment-4').value,
           5: document.getElementById('comment-5').value
-        },
-        details: {
-          date: document.getElementById('input-date').value,
-          time: document.getElementById('input-time').value,
-          venue: document.getElementById('input-venue').value,
-          rsvp: document.getElementById('input-rsvp').value
         }
       };
-      localStorage.setItem('saher_birthday_review', JSON.stringify(state));
+      localStorage.setItem('saher_birthday_card_review', JSON.stringify(state));
     }
 
     function loadData() {
-      const saved = localStorage.getItem('saher_birthday_review');
+      const saved = localStorage.getItem('saher_birthday_card_review');
       if (saved) {
         try {
           const state = JSON.parse(saved);
@@ -715,22 +1023,14 @@
               if (state.comments[i]) document.getElementById(`comment-${i}`).value = state.comments[i];
             }
           }
-          if (state.details) {
-            document.getElementById('input-date').value = state.details.date || 'Saturday, 5th December';
-            document.getElementById('input-time').value = state.details.time || '3:30 PM – 6:00 PM';
-            document.getElementById('input-venue').value = state.details.venue || "Jaego's House, The White Building, 557 Harrow Road, London W10 4RH";
-            if (state.details.rsvp) document.getElementById('input-rsvp').value = state.details.rsvp;
-          }
         } catch (e) {
           console.error(e);
         }
       } else {
         selectFavorite(1);
       }
-      updateDetails();
     }
 
-    // Auto-save on comment change
     for (let i = 1; i <= 5; i++) {
       document.getElementById(`comment-${i}`).addEventListener('input', saveData);
     }
