@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Saher's 3rd Birthday – Peter Rabbit Invites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --peter-blue: #5C83A4;
+      --peter-blue-light: #EBF3F8;
+      --peter-blue-dark: #3E5E7A;
+      --sage-green: #7D9D78;
+      --sage-light: #F0F5EF;
+      --carrot: #D97548;
+      --text: #2D3136;
+      --text-muted: #6E757D;
+      --border: #E8DFD5;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 110px;
+    }
+
+    header {
+      background: linear-gradient(180deg, #F3ECE2 0%, var(--bg) 100%);
+      padding: 24px 16px 18px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--peter-blue-light);
+      color: var(--peter-blue-dark);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
+      color: var(--peter-blue-dark);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 10px 12px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .nav-bar::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      white-space: nowrap;
+      padding: 8px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn.active {
+      background: var(--peter-blue);
+      color: white;
+      border-color: var(--peter-blue);
+      box-shadow: 0 2px 6px rgba(92, 131, 164, 0.35);
+    }
+
+    .content-container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .card.is-favorite {
+      border-color: var(--sage-green);
+      box-shadow: 0 10px 30px rgba(125, 157, 120, 0.22);
+    }
+
+    .card-banner {
+      padding: 12px 18px;
+      background: #FAF7F2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-title {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--peter-blue-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .fav-btn {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s;
+    }
+
+    .card.is-favorite .fav-btn {
+      background: var(--sage-green);
+      color: white;
+      border-color: var(--sage-green);
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .invite-preview {
+      background: #FDFBF7;
+      border: 1px solid #EFE8DE;
+      border-radius: 14px;
+      padding: 22px 18px;
+      margin-bottom: 18px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.65;
+    }
+
+    .invite-preview h3 {
+      font-size: 1.65rem;
+      color: var(--peter-blue-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+
+    .invite-preview .subtitle {
+      color: var(--carrot);
+      font-style: italic;
+      font-size: 1.05rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .invite-preview p {
+      margin-bottom: 12px;
+      color: #383B3F;
+    }
+
+    .placeholders-box {
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      background: white;
+      border-left: 3px solid var(--peter-blue);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 14px;
+    }
+
+    .placeholders-box div {
+      margin-bottom: 4px;
+    }
+    .placeholders-box strong {
+      color: var(--peter-blue-dark);
+      display: inline-block;
+      width: 75px;
+    }
+
+    .comment-section {
+      background: #FAF8F5;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .comment-section label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .comment-box {
+      width: 100%;
+      min-height: 70px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem;
+      resize: vertical;
+      outline: none;
+      transition: border-color 0.2s;
+      background: white;
+    }
+
+    .comment-box:focus {
+      border-color: var(--peter-blue);
+    }
+
+    .party-details-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .party-details-card h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.6rem;
+      color: var(--peter-blue-dark);
+      margin-bottom: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 12px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--peter-blue);
+    }
+
+    /* Fixed Bottom Action Bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      padding: 12px 16px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      z-index: 50;
+    }
+
+    .btn-action {
+      flex: 1;
+      max-width: 320px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-whatsapp:active {
+      background: #1EBE5D;
+      transform: scale(0.98);
+    }
+
+    .btn-copy {
+      background: var(--peter-blue-light);
+      color: var(--peter-blue-dark);
+      border: 1px solid var(--peter-blue);
+    }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50px);
+      background: var(--peter-blue-dark);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      z-index: 100;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .hero-art-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .hero-art {
+      width: 100%;
+      max-width: 360px;
+      border-radius: 16px;
+      border: 4px solid white;
+      box-shadow: var(--shadow);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toast" id="toast">Feedback Copied!</div>
+
+  <header>
+    <span class="badge">Saher is Turning 3 🥕</span>
+    <h1>Peter Rabbit Invites</h1>
+    <p>Tap your favourite invite, type any changes or ideas, and send your feedback directly via WhatsApp!</p>
+  </header>
+
+  <nav class="nav-bar">
+    <button class="nav-btn active" onclick="scrollToCard('card-1')">1. Storybook</button>
+    <button class="nav-btn" onclick="scrollToCard('card-2')">2. Hop On Over</button>
+    <button class="nav-btn" onclick="scrollToCard('card-3')">3. Garden Adventure</button>
+    <button class="nav-btn" onclick="scrollToCard('card-4')">4. Tea Party</button>
+    <button class="nav-btn" onclick="scrollToCard('card-5')">5. WhatsApp</button>
+    <button class="nav-btn" onclick="scrollToCard('party-details')">📝 Party Details</button>
+  </nav>
+
+  <div class="content-container">
+
+    <div class="hero-art-container">
+      <img src="peter_rabbit.jpg" alt="Peter Rabbit watercolor art" class="hero-art" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Card 1 -->
+    <div class="card" id="card-1">
+      <div class="card-banner">
+        <span class="card-title">📖 Option 1: Classic Storybook</span>
+        <button class="fav-btn" onclick="selectFavorite(1)">
+          <span class="fav-icon">🤍</span> Pick Favorite
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="invite-preview">
+          <h3>Once Upon a Time...</h3>
+          <span class="subtitle">Saher is Turning Three!</span>
+          <p><em>"Now run along, and don't get into mischief..."</em></p>
+          <p>You are warmly invited to celebrate a very special chapter as <strong>Saher turns 3</strong>! Put on your little blue jacket and join us for an afternoon of storybook adventures, garden treats, and sweet celebrations.</p>
+          <div class="placeholders-box">
+            <div><strong>Date:</strong> <span class="txt-date">[Insert Date]</span></div>
+            <div><strong>Time:</strong> <span class="txt-time">[Insert Time]</span></div>
+            <div><strong>Burrow:</strong> <span class="txt-venue">[Insert Venue Address]</span></div>
+            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact & Date]</span></div>
+          </div>
+        </div>
+        <div class="comment-section">
+          <label for="comment-1">💬 Your notes or changes for Option 1:</label>
+          <textarea id="comment-1" class="comment-box" placeholder="e.g. Love the storybook tone! Let's make the time 2pm..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card" id="card-2">
+      <div class="card-banner">
+        <span class="card-title">🎈 Option 2: Hop On Over (Playful)</span>
+        <button class="fav-btn" onclick="selectFavorite(2)">
+          <span class="fav-icon">🤍</span> Pick Favorite
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="invite-preview">
+          <h3>Hop On Over!</h3>
+          <span class="subtitle">Saher is Turning 3!</span>
+          <p>Hip, hop, hooray! A little bunny we love is turning three!</p>
+          <p>Join the warren for a hopping good time filled with games, giggles, bouncy toddler fun, and delicious birthday cake.</p>
+          <div class="placeholders-box">
+            <div><strong>When:</strong> <span class="txt-date">[Insert Date]</span> at <span class="txt-time">[Insert Time]</span></div>
+            <div><strong>Where:</strong> <span class="txt-venue">[Insert Venue]</span></div>
+            <div><strong>Note:</strong> Grip socks for soft play / Bunny ears welcome!</div>
+            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact]</span></div>
+          </div>
+        </div>
+        <div class="comment-section">
+          <label for="comment-2">💬 Your notes or changes for Option 2:</label>
+          <textarea id="comment-2" class="comment-box" placeholder="e.g. Perfect for toddlers, mention bringing spare clothes..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card" id="card-3">
+      <div class="card-banner">
+        <span class="card-title">🥕 Option 3: Garden Adventure</span>
+        <button class="fav-btn" onclick="selectFavorite(3)">
+          <span class="fav-icon">🤍</span> Pick Favorite
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="invite-preview">
+          <h3>Mischief in the Garden!</h3>
+          <span class="subtitle">Saher's 3rd Birthday Adventure</span>
+          <p>Sneak past the garden gate and join the mischief!</p>
+          <p>Saher is turning 3, and we are raiding the vegetable patch for sweet treats, garden games, and birthday cake (no scarecrows allowed!).</p>
+          <div class="placeholders-box">
+            <div><strong>When:</strong> <span class="txt-date">[Insert Date]</span> at <span class="txt-time">[Insert Time]</span></div>
+            <div><strong>Gate:</strong> <span class="txt-venue">[Insert Venue Address]</span></div>
+            <div><strong>Dress:</strong> Ready for outdoor fun and games</div>
+            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact]</span></div>
+          </div>
+        </div>
+        <div class="comment-section">
+          <label for="comment-3">💬 Your notes or changes for Option 3:</label>
+          <textarea id="comment-3" class="comment-box" placeholder="e.g. Great if weather is sunny! Add note about parking..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card" id="card-4">
+      <div class="card-banner">
+        <span class="card-title">🫖 Option 4: Picnic & Afternoon Tea</span>
+        <button class="fav-btn" onclick="selectFavorite(4)">
+          <span class="fav-icon">🤍</span> Pick Favorite
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="invite-preview">
+          <h3>Peter's Picnic & Tea Party</h3>
+          <span class="subtitle">In Honour of Saher's 3rd Birthday</span>
+          <p>You are cordially invited to celebrate with us on the lawn!</p>
+          <p>We are laying out picnic rugs for finger sandwiches, berries, chamomile tea, juice, and plenty of birthday cake.</p>
+          <div class="placeholders-box">
+            <div><strong>When:</strong> <span class="txt-date">[Insert Date]</span> at <span class="txt-time">[Insert Time]</span></div>
+            <div><strong>Where:</strong> <span class="txt-venue">[Insert Venue Address]</span></div>
+            <div><strong>RSVP:</strong> <span class="txt-rsvp">[RSVP Contact]</span></div>
+          </div>
+        </div>
+        <div class="comment-section">
+          <label for="comment-4">💬 Your notes or changes for Option 4:</label>
+          <textarea id="comment-4" class="comment-box" placeholder="e.g. Very sweet aesthetic, mention bringing blankets..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card" id="card-5">
+      <div class="card-banner">
+        <span class="card-title">📱 Option 5: WhatsApp Message</span>
+        <button class="fav-btn" onclick="selectFavorite(5)">
+          <span class="fav-icon">🤍</span> Pick Favorite
+        </button>
+      </div>
+      <div class="card-body">
+        <div class="invite-preview" style="font-family: 'Nunito', sans-serif; font-size: 0.96rem; background: #F4F7F6;">
+          <p>🐰🥕 <strong>Hop on over! Saher is turning 3!</strong> 🎂🎈</p>
+          <p>We would love for you to join us for a Peter Rabbit themed birthday celebration!</p>
+          <p>
+            🗓 <strong>Date:</strong> <span class="txt-date">[Date]</span><br>
+            ⏰ <strong>Time:</strong> <span class="txt-time">[Time]</span><br>
+            📍 <strong>Where:</strong> <span class="txt-venue">[Venue Name & Address]</span><br>
+            🥕 <strong>What to expect:</strong> Toddler games, garden treats & birthday cake!
+          </p>
+          <p>Please let us know if you can make it by <span class="txt-rsvp">[RSVP Date]</span> via WhatsApp on <span class="txt-rsvp-phone">[Phone]</span>.<br>Can't wait to celebrate together! 🐰✨</p>
+        </div>
+        <div class="comment-section">
+          <label for="comment-5">💬 Your notes or changes for Option 5:</label>
+          <textarea id="comment-5" class="comment-box" placeholder="e.g. Short and sweet, let's include the Google Maps pin..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Party Details -->
+    <div class="party-details-card" id="party-details">
+      <h2>📝 Party Details & Dates</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">Fill these in once and they will update all invites above automatically.</p>
+      
+      <div class="form-group">
+        <label>Party Date</label>
+        <input type="text" id="input-date" class="form-input" value="Saturday, 5th December" placeholder="e.g. Saturday, 5th December" oninput="updateDetails()">
+      </div>
+      <div class="form-group">
+        <label>Party Time</label>
+        <input type="text" id="input-time" class="form-input" value="3:30 PM – 6:00 PM" placeholder="e.g. 3:30 PM – 6:00 PM" oninput="updateDetails()">
+      </div>
+      <div class="form-group">
+        <label>Venue / Address</label>
+        <input type="text" id="input-venue" class="form-input" value="Jaego's House, The White Building, 557 Harrow Road, London W10 4RH" placeholder="e.g. Jaego's House, 557 Harrow Road, W10 4RH" oninput="updateDetails()">
+      </div>
+      <div class="form-group">
+        <label>RSVP Deadline & Contact</label>
+        <input type="text" id="input-rsvp" class="form-input" placeholder="e.g. RSVP by 5th Oct to Shonit (07123456789)" oninput="updateDetails()">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Floating Action Bar -->
+  <div class="bottom-bar">
+    <button class="btn-action btn-whatsapp" onclick="sendWhatsApp()">
+      💬 Send to WhatsApp
+    </button>
+    <button class="btn-action btn-copy" onclick="copyFeedback()">
+      📋 Copy Notes
+    </button>
+  </div>
+
+  <script>
+    let currentFavorite = 1;
+    const titles = {
+      1: "Option 1: Classic Storybook",
+      2: "Option 2: Hop On Over (Playful)",
+      3: "Option 3: Garden Adventure",
+      4: "Option 4: Picnic & Tea Party",
+      5: "Option 5: WhatsApp Message"
+    };
+
+    function selectFavorite(index) {
+      currentFavorite = index;
+      for (let i = 1; i <= 5; i++) {
+        const card = document.getElementById(`card-${i}`);
+        const btn = card.querySelector('.fav-btn');
+        const icon = card.querySelector('.fav-icon');
+        if (i === index) {
+          card.classList.add('is-favorite');
+          btn.innerHTML = `<span class="fav-icon">💖</span> My Pick!`;
+        } else {
+          card.classList.remove('is-favorite');
+          btn.innerHTML = `<span class="fav-icon">🤍</span> Pick Favorite`;
+        }
+      }
+      saveData();
+      showToast(`Selected ${titles[index]}!`);
+    }
+
+    function scrollToCard(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    function updateDetails() {
+      const date = document.getElementById('input-date').value || '[Insert Date]';
+      const time = document.getElementById('input-time').value || '[Insert Time]';
+      const venue = document.getElementById('input-venue').value || '[Insert Venue Address]';
+      const rsvp = document.getElementById('input-rsvp').value || '[RSVP Contact & Date]';
+
+      document.querySelectorAll('.txt-date').forEach(el => el.textContent = date);
+      document.querySelectorAll('.txt-time').forEach(el => el.textContent = time);
+      document.querySelectorAll('.txt-venue').forEach(el => el.textContent = venue);
+      document.querySelectorAll('.txt-rsvp').forEach(el => el.textContent = rsvp);
+
+      saveData();
+    }
+
+    function generateSummary() {
+      const date = document.getElementById('input-date').value || '(Not set yet)';
+      const time = document.getElementById('input-time').value || '(Not set yet)';
+      const venue = document.getElementById('input-venue').value || '(Not set yet)';
+      const rsvp = document.getElementById('input-rsvp').value || '(Not set yet)';
+      
+      let summary = `🐰 *Saher's 3rd Birthday – Peter Rabbit Party Plan* 🎂\n\n`;
+      summary += `⭐ *Favourite Pick:* ${titles[currentFavorite]}\n\n`;
+
+      let hasNotes = false;
+      let notesText = `📝 *Comments & Tweaks:*\n`;
+      for (let i = 1; i <= 5; i++) {
+        const comment = document.getElementById(`comment-${i}`).value.trim();
+        if (comment) {
+          hasNotes = true;
+          notesText += `• *${titles[i]}:* ${comment}\n`;
+        }
+      }
+      if (hasNotes) {
+        summary += notesText + `\n`;
+      }
+
+      summary += `📍 *Party Details:*\n`;
+      summary += `• Date: ${date}\n`;
+      summary += `• Time: ${time}\n`;
+      summary += `• Venue: ${venue}\n`;
+      summary += `• RSVP: ${rsvp}\n`;
+
+      return summary;
+    }
+
+    function sendWhatsApp() {
+      const text = encodeURIComponent(generateSummary());
+      window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
+    }
+
+    function copyFeedback() {
+      const text = generateSummary();
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Feedback & notes copied!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+
+    function saveData() {
+      const state = {
+        favorite: currentFavorite,
+        comments: {
+          1: document.getElementById('comment-1').value,
+          2: document.getElementById('comment-2').value,
+          3: document.getElementById('comment-3').value,
+          4: document.getElementById('comment-4').value,
+          5: document.getElementById('comment-5').value
+        },
+        details: {
+          date: document.getElementById('input-date').value,
+          time: document.getElementById('input-time').value,
+          venue: document.getElementById('input-venue').value,
+          rsvp: document.getElementById('input-rsvp').value
+        }
+      };
+      localStorage.setItem('saher_birthday_review', JSON.stringify(state));
+    }
+
+    function loadData() {
+      const saved = localStorage.getItem('saher_birthday_review');
+      if (saved) {
+        try {
+          const state = JSON.parse(saved);
+          if (state.favorite) selectFavorite(state.favorite);
+          if (state.comments) {
+            for (let i = 1; i <= 5; i++) {
+              if (state.comments[i]) document.getElementById(`comment-${i}`).value = state.comments[i];
+            }
+          }
+          if (state.details) {
+            document.getElementById('input-date').value = state.details.date || 'Saturday, 5th December';
+            document.getElementById('input-time').value = state.details.time || '3:30 PM – 6:00 PM';
+            document.getElementById('input-venue').value = state.details.venue || "Jaego's House, The White Building, 557 Harrow Road, London W10 4RH";
+            if (state.details.rsvp) document.getElementById('input-rsvp').value = state.details.rsvp;
+          }
+        } catch (e) {
+          console.error(e);
+        }
+      } else {
+        selectFavorite(1);
+      }
+      updateDetails();
+    }
+
+    // Auto-save on comment change
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById(`comment-${i}`).addEventListener('input', saveData);
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
